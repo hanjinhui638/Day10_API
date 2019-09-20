@@ -20,33 +20,51 @@ public class Test2 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("주민번호를 입력 ");
 		String jumin = sc.next();
-		
-	
-		for(int i=0;i<jumin.length();i++){
-			char ch = jumin.charAt(i);
-			System.out.println(ch);
-			String str2= new String
-			String a3 = ch.tostring
-			
-			int a2 =Integer.valueOf(ch);
-			System.out.println(a2);
-		
-			
+		int sum =0; //합계를 담을 변수 
+		int idx =2;
+
+		//1. splite 
+		String [] jumins = jumin.split("");
+		for(int i=0;i<jumins.length;i++){
+			System.out.println(jumins[i]);
 		}
-	
+		//2. subString
+		for(int i=0; i<jumin.length();i++) {
+			if(i==6) {
+				continue;
+			}	
+			String n1 = jumin.substring(i,i+1);
+			int n = Integer.parseInt(n1);
+			System.out.println(n1);
+		}
+		//3. charAt
+		for(int i =0; i<jumin.length()-1;i++) {
+			if(i==6) {
+				continue;
+			}
+			char ch = jumin.charAt(i);
+			String n1 = String.valueOf(ch);
+			int n = Integer.parseInt(n1);
+			sum = sum + n*idx;
+			idx++;
+			if(idx == 10) {
+				idx=2;
+			}
+		
+		}
+		
+		sum =sum%11;
+		sum = 11-sum; 
+		sum = sum%10;
 		
 		
+		int result = Integer.parseInt(String.valueOf(jumin.charAt(jumin.length()-1)));
 		
-		
-		
-		
-		//for(int j=2;j<10;j++) {
-			
-	//	}
-
-
-
-
-	}
+		if(sum == result) {
+			System.out.println("맞는번호");
+		}else {
+			System.out.println("틀린 번호");
+		}
+}
 
 }
