@@ -53,7 +53,7 @@ public class Test2 {
 		
 		}
 		
-		sum =sum%11;
+		sum = sum%11;
 		sum = 11-sum; 
 		sum = sum%10;
 		
